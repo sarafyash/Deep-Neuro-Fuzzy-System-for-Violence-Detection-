@@ -18,3 +18,23 @@ Figure below visually represents the components and data flow within the violenc
 ## Dataset Description
 
 Our dataset addresses a key limitation in existing research by offering unique diversity. It includes videos from popular sources used for violence detection such as the hockey fight dataset, movies dataset (7), and videos from YouTube and Shutterstock. The dataset is categorized into "Non-Violence" and "Violence" directories. The "Non-Violence" directory contains 1136 videos showing activities like eating, sports, and singing without violent content. The "Violence" directory includes approximately 1000 videos depicting severe violence in various scenarios, with video durations typically ranging from 2 to 7 seconds. This curated collection enhances the dataset's efficacy for developing violence detection algorithms.
+
+## Data Pre-Processing:
+In the data pre-processing phase, videos are processed to extract individual frames using the cv2 library from OpenCV. This step involves breaking down each video into its constituent frames, which are then resized to a standardized dimension of 64x64 pixels. A sequence length of 16 frames per video is established to ensure effective temporal information processing. Videos with fewer than 16 frames are filtered out to maintain dataset consistency. Two classes, namely "Non-Violence" and "Violence," are defined as target categories for the model. The dataset is organized into arrays containing features (frames), corresponding labels (one-hot-encoded vectors representing class indices), and paths to video files. Finally, the dataset is split into 80% training and 20% testing sets to facilitate model evaluation and validation.
+
+## MobileNetV2 as Feature Extractor:
+MobileNetV2 is employed as a feature extractor in the model architecture. This lightweight convolutional neural network (CNN) architecture is chosen for its efficiency in extracting spatial features from video frames. Utilizing pre-trained weights, MobileNetV2 is able to capture meaningful spatial information while maintaining computational efficiency. In the context of this model, only the convolutional layers of MobileNetV2 are retained, and the fully connected layers are discarded. This adaptation ensures that the network focuses solely on extracting relevant features from the input video frames without unnecessary processing.
+
+  ### Fine-Tuning MobileNetV2:
+  To tailor MobileNetV2 specifically for the task of violence detection, a process known as fine-tuning is applied. Fine-tuning allows the model to adapt its pre-trained weights to better suit the characteristics   of the dataset and the specific classification task. In this case, the last 40 layers of MobileNetV2 are fine-tuned during training, while the earlier layers are frozen. This selective fine-tuning approach     
+  helps prevent overfitting by adjusting only the most relevant parameters, thereby enhancing the model's ability to learn discriminative features related to violence detection.
+
+## Bidirectional LSTM (BiLSTM) for Modeling:
+After extracting spatial features using MobileNetV2, the sequence of feature maps is passed through a Bidirectional Long Short-Term Memory (BiLSTM) layer. BiLSTMs are a type of recurrent neural network (RNN) that excel in capturing temporal dependencies in sequential data. By processing information in both forward and backward directions, BiLSTMs effectively capture context from past and future frames within each video sequence. This capability is crucial for understanding temporal patterns and dynamics, thereby enhancing the model's ability to discriminate between violent and non-violent behavior in videos.
+
+## Fully Connected Layers for Neuro-Fuzzy Classification:
+The model incorporates fully connected dense layers to further process the high-level spatiotemporal features extracted by MobileNetV2 and BiLSTM. These layers are pivotal in transforming the learned features into actionable predictions regarding the presence of violence in video sequences. Rectified Linear Unit (ReLU) activation functions introduce non-linearity, allowing the model to capture complex patterns inherent in video data. Dropout regularization techniques are applied to prevent overfitting and enhance the model's generalizability. The final layer employs a sigmoid activation function to produce class probabilities, indicating the likelihood of violence in the input video sequence. This comprehensive approach integrates feature extraction, sequence learning, and classification to achieve accurate violence detection in video data.
+
+
+
+

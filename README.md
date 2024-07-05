@@ -1,4 +1,4 @@
-# Deep-Neuro-Fuzzy-System-for-Violence-Detection-
+# Deep-Neuro-Fuzzy-System-for-Violence-Detection
 ### Violence detection using MobileNet-V2 with Bi-Directional LSTM and Neuro-Fuzzy Classification System.
 
 This project introduces a deep neuro-fuzzy system for violence detection in video content, combining BiLSTM networks, MobileNet architecture, and fuzzy logic. Achieving 97.87% accuracy, it offers robust and efficient detection, adaptable for various applications such as surveillance and social media monitoring.
@@ -54,8 +54,22 @@ Our model evaluates each video frame thoroughly, providing binary violence predi
 
 Performance metrics for "Not Violence" and "Violence" classes show high precision, recall, and F1-score, averaging 97% accuracy across 423 instances.
 
-## Neuro-Fuzzy Classification System.
+## Neuro-Fuzzy Classification System
 
 We began by evaluating our model's performance without additional classification techniques, achieving an initial accuracy of 97.16%. Integrating SVM, Naïve Bayes, Random Forest, K-NN, and Gradient Boosting classifiers into our neuro-fuzzy system showed varied accuracy improvements. Naïve Bayes achieved the highest accuracy at 97.87%, while SVM, Gradient Boosting, and Random Forest also improved significantly. K-NN, however, exhibited comparatively lower accuracy rates. This highlights the importance of selecting appropriate classification techniques to maximize violence detection system effectiveness.
 
   ![Neurofuzzy](https://github.com/sarafyash/Deep-Neuro-Fuzzy-System-for-Violence-Detection-/assets/88444976/00404cba-9253-4c65-9deb-c4b0ceaa0002)
+
+## Predictions
+
+The violence detection system achieves precise identification of violent videos with a confidence level of 99.629%, shown in below. Similarly, it accurately distinguishes non-violent content, classifying videos with a confidence level of 99.177%.
+
+This version maintains clarity while emphasizing the high confidence levels in both violence and non-violence classifications.
+
+![Violence_Prediction (1)](https://github.com/sarafyash/Deep-Neuro-Fuzzy-System-for-Violence-Detection-/assets/88444976/3826100f-e027-4d54-bdac-1d795a886660)
+![NonViolence_Prediction (1)](https://github.com/sarafyash/Deep-Neuro-Fuzzy-System-for-Violence-Detection-/assets/88444976/5f007c99-3fcb-4329-a89e-cefb53b28472)
+
+
+## Conclusions
+
+In conclusion, our hybrid CNN-RNN architecture effectively identifies violent video content by leveraging MobileNetV2 for spatial features and BiLSTM for temporal dynamics. Incorporating neuro-fuzzy classification techniques further enhances accuracy, demonstrating efficacy across diverse video datasets. Significant improvements in accuracy, notably from 96.37% to 97.87%, underscore the model's robustness. While facing limitations in frame size and computational complexity, future research can focus on adaptive model architectures and optimization strategies to enhance practical viability and scalability in real-world settings. This study represents a significant advancement in violence detection, promising improved security measures across applications from surveillance to social media platforms.

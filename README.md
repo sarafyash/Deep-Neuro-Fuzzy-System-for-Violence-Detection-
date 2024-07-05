@@ -62,7 +62,7 @@ We began by evaluating our model's performance without additional classification
 
 ## Predictions
 
-The violence detection system achieves precise identification of violent videos with a confidence level of 99.629%, shown in below. Similarly, it accurately distinguishes non-violent content, classifying videos with a confidence level of 99.177%.
+The violence detection system achieves precise identification of violent videos with a confidence level of 99.629%, shown below. Similarly, it accurately distinguishes non-violent content, classifying videos with a confidence level of 99.177%.
 
 This version maintains clarity while emphasizing the high confidence levels in both violence and non-violence classifications.
 

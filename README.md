@@ -35,6 +35,27 @@ After extracting spatial features using MobileNetV2, the sequence of feature map
 ## Fully Connected Layers for Neuro-Fuzzy Classification:
 The model incorporates fully connected dense layers to further process the high-level spatiotemporal features extracted by MobileNetV2 and BiLSTM. These layers are pivotal in transforming the learned features into actionable predictions regarding the presence of violence in video sequences. Rectified Linear Unit (ReLU) activation functions introduce non-linearity, allowing the model to capture complex patterns inherent in video data. Dropout regularization techniques are applied to prevent overfitting and enhance the model's generalizability. The final layer employs a sigmoid activation function to produce class probabilities, indicating the likelihood of violence in the input video sequence. This comprehensive approach integrates feature extraction, sequence learning, and classification to achieve accurate violence detection in video data.
 
+## Working 
 
+To see the code in action, please refer to the following GitHub repository:
+[GitHub - Deep Neuro Fuzzy System for Violence Detection](https://github.com/sarafyash/Deep-Neuro-Fuzzy-System-for-Violence-Detection-/blob/main/Capstone_Project.ipynb).
 
+## Results and Discussion
 
+Our study investigates automated violence detection in videos, crucial for safety and content moderation. Using diverse datasets including movies, sports videos, and online content, our model achieved an initial accuracy of 97.16% without additional techniques. Integration of SVM, Naïve Bayes, Random Forest, K-NN, and Gradient Boosting improved accuracy, with Naïve Bayes reaching 97.87%. This validates combining fuzzy logic and neural networks for enhanced classification.
+
+Our model evaluates each video frame thoroughly, providing binary violence predictions with 99% confidence. It supports automated safety measures and efficient content moderation in online platforms. Visual aids including accuracy graph, confusion matrix , and classification report detail system performance.
+
+  ![accuracy (2)](https://github.com/sarafyash/Deep-Neuro-Fuzzy-System-for-Violence-Detection-/assets/88444976/9786af72-f39f-4f97-93b6-87f7423e6a5b)
+  
+  ![Confusion Matrix (1)](https://github.com/sarafyash/Deep-Neuro-Fuzzy-System-for-Violence-Detection-/assets/88444976/8e5d3f29-c1ee-4b59-8d5e-ca28988aff89)
+  
+  ![precision](https://github.com/sarafyash/Deep-Neuro-Fuzzy-System-for-Violence-Detection-/assets/88444976/aec30e8b-99b3-49b1-b603-9c010fa1ce9a)
+
+Performance metrics for "Not Violence" and "Violence" classes show high precision, recall, and F1-score, averaging 97% accuracy across 423 instances.
+
+## Neuro-Fuzzy Classification System.
+
+We began by evaluating our model's performance without additional classification techniques, achieving an initial accuracy of 97.16%. Integrating SVM, Naïve Bayes, Random Forest, K-NN, and Gradient Boosting classifiers into our neuro-fuzzy system showed varied accuracy improvements. Naïve Bayes achieved the highest accuracy at 97.87%, while SVM, Gradient Boosting, and Random Forest also improved significantly. K-NN, however, exhibited comparatively lower accuracy rates. This highlights the importance of selecting appropriate classification techniques to maximize violence detection system effectiveness.
+
+  ![Neurofuzzy](https://github.com/sarafyash/Deep-Neuro-Fuzzy-System-for-Violence-Detection-/assets/88444976/00404cba-9253-4c65-9deb-c4b0ceaa0002)
